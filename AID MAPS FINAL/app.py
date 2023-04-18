@@ -65,7 +65,7 @@ def maps():
     ed=request.form['end']
 
     endpoint = "https://graphhopper.com/api/1/route"
-    map_key = GraphHopper("4b60a740-4dfb-4bb3-ae7f-55d30aa66c64")
+    map_key = GraphHopper("API key")
     origin = map_key.address_to_latlong(star)
     dest = map_key.address_to_latlong(ed)
     dist = map_key.distance([origin, dest], unit ='km')
@@ -85,7 +85,7 @@ def maps():
     print("End : ", en)
     
     params = {
-    "key": "4b60a740-4dfb-4bb3-ae7f-55d30aa66c64",
+    "key": "API key",
     "point": [st, en],
     "points_encoded": "false",
     "vehicle": "car",
@@ -112,7 +112,7 @@ def maps():
 
     folium.PolyLine(locations=pth, line_opacity = 0.5, color='red').add_to(m)
     # m.save('car2.html')
-    directory_path = "C:/Users/Manya Sharma/Desktop/AID MAPS FINAL/templates"
+    directory_path = "C:/Users/XXXXXXX/Desktop/AID MAPS FINAL/templates"
     file_path = os.path.join(directory_path, "car2.html")
     m.save(file_path)
 
@@ -176,16 +176,16 @@ def soscall():
     from twilio.rest import Client
 
    
-    account_sid = 'ACdc48161fc46db19d5bf9d0ef064f5887'
-    auth_token = 'dca7479fdb89d44471b20ddbd4526410'
+    account_sid = 'ID'
+    auth_token = 'TOKEN'
 
     
     client = Client(account_sid, auth_token)
 
  
-    to_phone_number = '+91 90399 92220'  
+    to_phone_number = '+91XXXXXXXX'  
 
-    from_phone_number = '+15856327284' 
+    from_phone_number = '+XXXXXXXXX' 
 
     # Make the call
     call = client.calls.create(
@@ -211,10 +211,10 @@ def msgsend():
     client = Client(account_sid, auth_token)
 
     # The number you want to send the message to
-    to_number = '+919039992220'
+    to_number = '+91XXXXXXX'
 
     # The number your Twilio account is associated with
-    from_number = '+917797779444'
+    from_number = '+91XXXXXXXXX'
 
     # The message you want to send
     message = 'Hello from Twilio!'
