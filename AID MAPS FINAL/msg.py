@@ -8,10 +8,10 @@ auth_token = 'YOUR_AUTH_TOKEN'
 client = Client(account_sid, auth_token)
 
 # The number you want to send the message to
-to_number = '+919039992220'
+to_number = '+91XXXXXXXXX'
 
 # The number your Twilio account is associated with
-from_number = '+917797779444'
+from_number = '+91XXXXXXXXX'
 
 # The message you want to send
 message = 'Hello from Twilio!'
