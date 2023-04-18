@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+    <style>
+        body {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+#sos {
+  outline: none;
+  width: 200px;
+  height: 200px;
+  margin-top: 70px;
+  border: none;
+  border-radius: 100px;
+  background-color: red;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  border: 5px solid pink;
+  box-shadow: 0 0 5px gray;
+}
+#sos:focus {
+  box-shadow: 0 0 1px black;
+}
+*{
+  margin: 0%;
+}
+
+header img {
+  height: 30px;
+}
+header {
+  background-color: rgba(255,255,255,0.5);
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+}
+header * {
+  display: inline;
+}
+header li {
+  position:relative; top:12px;
+  margin: 30px;
+  text-align: center;
+}
+header li a {
+  color: black;
+  text-decoration: none;
+}
+/* .logo{
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  margin-top: 3px;
+  margin-left: 10px;
+} */
+    </style>
+</head>
+<body>
+  
+  <!-- <img class="logo" src="/static/images/final_logo.png" alt=""> -->
+  <header>
+      <!-- <img src="https://codetheweb.blog/assets/img/icon2.png"> -->
+       <nav>
+           <ul>
+            <li><a href="/sos">SOS Button</a></li>
+            <li><a href="/map">Tracker</a></li>
+            <li><a href="/sos"><img src="/static/images/final_logo.png" style="height: 35px; width: 35px;"></a></li>
+            <li><a href="/">Log In</a></li>
+            <li><a href="/details">Edit Details</a></li>
+           </ul>
+       </nav>
+   </header>
+    <form action="/soscall" method="post">
+        <a href="/msgsend"><button type="submit" id="sos" onclick="sosMorse()">SOS</button></a>
+    </form><br><br><br>
+    <center><h4>After pressing SoS button, we will connect </h4></center>
+    <center><h4>you to the nearest emergengy services.</h4></center><br><br>
+
+    <h3>{{sos_msg}}</h3>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: url("/static/images/map_back1.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        *{
+            margin: 0%;
+        }
+        .box{
+            background-color: white;
+            height: 520px;
+            width: 36%;
+            border-radius: 4%;
+            margin-left: 60%;
+            margin-top: 5%;
+            box-shadow: 5px 10px 18px #888888
+        }
+        .box input{
+            width: 30%;
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #B0B3B9;
+        }
+        .box_in{
+            width: 100%;
+            height: 56%;
+            display: flex;
+        }
+        .box_div{
+            height: 100%;
+            width: 50%;
+          
+        }
+        .button:hover{
+            background-color: #1b4291b6;
+            color: white;
+        }
+
+        header img {
+            height: 30px;
+        }
+        header {
+            background-color: rgba(255,255,255,0.5);
+            /* position: fixed; */
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 55px;
+            text-align: center;
+        }
+        header * {
+            display: inline;
+        }
+        header li {
+            position:relative; top:12px;
+            margin: 30px;
+        }
+        header li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .box1{
+            background-color: white;
+            height: 250px;
+            width: 36%;
+            border-radius: 4%;
+            margin-left: 60%;
+            margin-top: 5%;
+            box-shadow: 5px 10px 18px #888888
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <img class="logo" src="/static/images/final_logo.png" alt=""> -->
+    <header>
+        <!-- <img src="https://codetheweb.blog/assets/img/icon2.png"> -->
+         <nav>
+             <ul>
+                <li><a href="/sos">SOS Button</a></li>
+                <li><a href="/map">Tracker</a></li>
+                <li><a href="/sos"><img src="/static/images/final_logo.png" style="height: 35px; width: 35px;"></a></li>
+                <li><a href="/">Log In</a></li>
+                <li><a href="/details">Edit Details</a></li>
+             </ul>
+         </nav>
+     </header>
+    <div class="box">
+       <center> <br><u><h3>Enter your location:</h3></u></center><br>
+    <form action="/map_data" method="post">
+        <center><input type="text" placeholder="Your location" name="start" required class="start"><br><br></center>
+        <center><input type="text" placeholder="Destination" name="end" required class="end"><br><br></center>
+        <center><button class="button" style="font-size: 15px; height: 30px; width: 60px;" type="submit">Enter</button></center>
+        
+    </form>
+
+    <div class="box_in">
+        <div class="box_div"><br><br><br>
+            <h2 style="margin-left: 10px;">Details:</h2><br>
+            <span style="margin-left: 10px;"><b>Time:</b> {{time}} min</span><br><br>
+            <br>
+            <span style="margin-left: 10px;"><b>Distance:</b> {{distance}} km</span>
+        </div>
+        <div class="box_div"><br><br><br><br><br>
+            <span style="margin-left: 10px; position:relative; top:12px;"><b>Start:</b> {{st}}</span><br><br><br>
+            <span style="margin-left: 10px; position:relative; top:12px;"><b>End:</b> {{en}}</span><br><br><br><br>
+            <button class="button" style=" position:relative; right:220px; font-size: 15px; height: 30px; width: 90px;"><a href="/emer" style="color: black; text-decoration: none;">View Maps</a>
+        </div>
+    </div>
+    </div>
+    <br><br><br>
+
+
+
+    <div class="box1">
+     <div class="box_in">
+         <div class="box_div"><br><br>
+             <h2 style="margin-left: 10px;">Details:</h2><br><br>
+             <span style="margin-left: 10px;"><b>City :</b> Delhi</span><br><br>
+             <br>
+             <span style="margin-left: 10px;"><b>Name :</b> Rana Raju</span>
+         </div>
+         <div class="box_div"><br><br><br><br>
+             <span style="margin-left: 10px; position:relative; top:12px;"><b>Service No. :</b> 1234</span><br><br><br>
+             <span style="margin-left: 10px; position:relative; top:12px;"><b>Head Quaters :</b> Fortis</span><br><br><br><br>
+             
+         </div>
+     </div>
+     </div><br><br>
+</body>
+</html>
