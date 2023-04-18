@@ -193,31 +193,17 @@ def soscall():
         from_=from_phone_number,
         url='http://demo.twilio.com/docs/voice.xml'  
     )
-
-    print('Call SID:', call.sid)  
-    return render_template("sos.html",sos_msg="Your call has been forwarded.")
-
-@app.route('/msg')
-def msg():
-    return ("msg")
-
-@app.route('/msgsend',methods=["POST"])
-def msgsend():
-    # Your Twilio account SID and auth token
-    account_sid = 'YOUR_ACCOUNT_SID'
-    auth_token = 'YOUR_AUTH_TOKEN'
-
-    # Create a Twilio client
-    client = Client(account_sid, auth_token)
-
+    
+    
+    #msg
     # The number you want to send the message to
-    to_number = '+91XXXXXXX'
+    to_number = '+91xxxxxxxx'
 
     # The number your Twilio account is associated with
-    from_number = '+91XXXXXXXXX'
+    from_number = 'xxxxxxxxxxx'
 
     # The message you want to send
-    message = 'Hello from Twilio!'
+    message = 'Details of Victum Name: Naman Kotak, City: Raipur, Contact No.: +0987654321, Current Location'
 
     # Send the message using the Twilio API
     message = client.messages.create(
@@ -227,7 +213,12 @@ def msgsend():
 
     # Print the message ID
     print(f"Message ID: {message.sid}")
-    return
+
+
+    print('Call SID:', call.sid)  
+    return render_template("sos.html",sos_msg="Your call has been forwarded.")
+
+    
 
 if __name__=="__main__":
     app.run(debug=True)
